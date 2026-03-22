@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-warmGray-50 dark:bg-warmGray-900 text-warmGray-900 dark:text-warmGray-50;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  /* スクロールバーのスタイリング */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-warmGray-300 dark:bg-warmGray-600;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-warmGray-400 dark:bg-warmGray-500;
+  }
+}
