@@ -44,14 +44,15 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         autoFocus={autoFocus}
         aria-label={ariaLabel}
         className="
-          w-full bg-white dark:bg-warmGray-800
-          border border-warmGray-200 dark:border-warmGray-700
+          w-full bg-warm-surface dark:bg-warm-surface-dark
+          border border-warm-border dark:border-warm-border-dark
           rounded-input px-4 py-3
-          text-warmGray-900 dark:text-warmGray-50
-          text-task-title
-          placeholder:text-warmGray-400 dark:placeholder:text-warmGray-500
-          focus:outline-none focus:ring-2 focus:ring-accent-500/20
-          focus:border-accent-500 dark:focus:border-accent-400
+          text-warm-text-primary dark:text-warm-text-primary-dark
+          text-task-title font-body
+          placeholder:text-warm-text-secondary dark:placeholder:text-warm-text-secondary-dark
+          shadow-input
+          focus:outline-none focus:ring-2 focus:ring-indigo-500/20
+          focus:border-indigo-400 dark:focus:border-indigo-400
           transition-all duration-200
         "
       />

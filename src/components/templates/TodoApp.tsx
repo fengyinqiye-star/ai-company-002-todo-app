@@ -8,10 +8,10 @@ import { Footer } from '@/components/organisms/Footer';
 
 export function TodoApp() {
   return (
-    <div className="min-h-screen bg-warmGray-50 dark:bg-warmGray-900 transition-colors duration-300">
-      <div className="mx-auto max-w-[720px] px-4 sm:px-6 py-8 sm:py-12">
+    <div className="min-h-screen bg-warm-bg dark:bg-warm-bg-dark transition-colors duration-300">
+      <div className="mx-auto max-w-[640px] px-4 sm:px-6 py-10 sm:py-16">
         <Header />
-        <main className="mt-8 space-y-6">
+        <main className="mt-10 space-y-5">
           <TaskInput />
           <FilterTabs />
           <TaskList />

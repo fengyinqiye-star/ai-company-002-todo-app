@@ -42,7 +42,6 @@ export const TaskItem = memo(function TaskItem({ task, dragControls = false }: T
   const handleEditSubmit = useCallback(() => {
     const trimmed = editValue.trim();
     if (trimmed.length === 0) {
-      // Empty title: revert to original
       setEditValue(task.title);
       setIsEditing(false);
       return;
@@ -91,20 +90,21 @@ export const TaskItem = memo(function TaskItem({ task, dragControls = false }: T
       role="listitem"
     >
       <div
-        className="
-          flex items-center gap-3 p-4
-          bg-white dark:bg-warmGray-800
-          rounded-card shadow-card
-          hover:shadow-card-hover
-          transition-shadow duration-200
-        "
+        className={`
+          flex items-center gap-3 px-5 py-4
+          bg-warm-surface dark:bg-warm-surface-dark
+          rounded-card shadow-card dark:shadow-card-dark
+          hover:shadow-card-hover dark:hover:shadow-card-hover-dark
+          border border-warm-border/50 dark:border-warm-border-dark/50
+          transition-all duration-250
+        `}
       >
         {dragControls && (
           <div
             className="
               cursor-grab active:cursor-grabbing
-              text-warmGray-300 dark:text-warmGray-600
-              hover:text-warmGray-400 dark:hover:text-warmGray-500
+              text-warm-border dark:text-warm-border-dark
+              hover:text-warm-text-secondary
               touch-none
             "
             aria-label="ドラッグして並び替え"
@@ -132,8 +132,8 @@ export const TaskItem = memo(function TaskItem({ task, dragControls = false }: T
               aria-label="タスクを編集"
               className="
                 w-full bg-transparent
-                text-task-title text-warmGray-900 dark:text-warmGray-50
-                border-b-2 border-accent-500 dark:border-accent-400
+                text-task-title text-warm-text-primary dark:text-warm-text-primary-dark
+                border-b-2 border-indigo-500 dark:border-indigo-400
                 outline-none py-0
               "
             />
@@ -144,8 +144,8 @@ export const TaskItem = memo(function TaskItem({ task, dragControls = false }: T
                 text-task-title block truncate transition-colors duration-200
                 ${!task.completed ? 'cursor-text' : ''}
                 ${task.completed
-                  ? 'text-warmGray-400 dark:text-warmGray-500'
-                  : 'text-warmGray-900 dark:text-warmGray-50'
+                  ? 'text-warm-text-secondary dark:text-warm-text-secondary-dark'
+                  : 'text-warm-text-primary dark:text-warm-text-primary-dark'
                 }
               `}
               title={task.completed ? undefined : 'ダブルクリックで編集'}
@@ -153,13 +153,12 @@ export const TaskItem = memo(function TaskItem({ task, dragControls = false }: T
               {task.title}
             </span>
           )}
-          {/* Strikethrough animation */}
           {!isEditing && (
             <motion.div
               variants={strikethroughVariants}
               initial={false}
               animate={task.completed ? 'checked' : 'unchecked'}
-              className="absolute top-1/2 left-0 right-0 h-[1.5px] bg-warmGray-400 dark:bg-warmGray-500"
+              className="absolute top-1/2 left-0 right-0 h-[1.5px] bg-warm-text-secondary dark:bg-warm-text-secondary-dark"
               style={{ originX: 0 }}
             />
           )}

@@ -19,10 +19,10 @@ export function Checkbox({ checked, onChange, ariaLabel }: CheckboxProps) {
       className={`
         flex h-5 w-5 min-w-[20px] items-center justify-center rounded-[4px] border-2
         transition-colors duration-200
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/20
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/25
         ${checked
-          ? 'border-success-500 bg-success-500'
-          : 'border-warmGray-300 bg-white dark:border-warmGray-600 dark:bg-warmGray-800 hover:border-warmGray-400 dark:hover:border-warmGray-500'
+          ? 'border-emerald-500 bg-emerald-500'
+          : 'border-warm-border bg-warm-surface dark:border-warm-border-dark dark:bg-warm-surface-dark hover:border-indigo-400 dark:hover:border-indigo-400'
         }
       `}
     >

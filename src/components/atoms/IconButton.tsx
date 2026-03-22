@@ -23,8 +23,8 @@ export function IconButton({
 
   const variantClasses =
     variant === 'danger'
-      ? 'text-warmGray-400 hover:text-danger-500 dark:text-warmGray-500 dark:hover:text-danger-400 hover:bg-danger-500/10'
-      : 'text-warmGray-500 hover:text-warmGray-700 dark:text-warmGray-400 dark:hover:text-warmGray-200 hover:bg-warmGray-100 dark:hover:bg-warmGray-700';
+      ? 'text-warm-text-secondary hover:text-rose-500 dark:text-warm-text-secondary-dark dark:hover:text-rose-400 hover:bg-rose-500/10'
+      : 'text-warm-text-secondary hover:text-warm-text-primary dark:text-warm-text-secondary-dark dark:hover:text-warm-text-primary-dark hover:bg-warm-bg-alt dark:hover:bg-warm-bg-alt-dark';
 
   return (
     <button
@@ -33,7 +33,7 @@ export function IconButton({
       aria-label={ariaLabel}
       className={`
         rounded-input transition-colors duration-150
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/20
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/25
         ${sizeClasses} ${variantClasses} ${className}
       `}
     >

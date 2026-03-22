@@ -18,11 +18,11 @@ export function EmptyState({ message, icon }: EmptyStateProps) {
       className="flex flex-col items-center justify-center py-12 text-center"
     >
       {icon && (
-        <div className="mb-4 text-warmGray-300 dark:text-warmGray-600">
+        <div className="mb-4 text-warm-border dark:text-warm-border-dark">
           {icon}
         </div>
       )}
-      <p className="text-footer text-warmGray-400 dark:text-warmGray-500">
+      <p className="text-footer text-warm-text-secondary dark:text-warm-text-secondary-dark font-body">
         {message}
       </p>
     </motion.div>

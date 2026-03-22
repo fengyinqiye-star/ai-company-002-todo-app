@@ -15,11 +15,11 @@ export function ThemeToggle() {
       aria-label={theme === 'light' ? 'ダークモードに切り替え' : 'ライトモードに切り替え'}
       className="
         relative p-2 rounded-input
-        text-warmGray-500 hover:text-warmGray-700
-        dark:text-warmGray-400 dark:hover:text-warmGray-200
-        hover:bg-warmGray-100 dark:hover:bg-warmGray-700
+        text-warm-text-secondary hover:text-warm-text-primary
+        dark:text-warm-text-secondary-dark dark:hover:text-warm-text-primary-dark
+        hover:bg-warm-bg-alt dark:hover:bg-warm-bg-alt-dark
         transition-colors duration-150
-        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/20
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/25
       "
     >
       <AnimatePresence mode="wait" initial={false}>

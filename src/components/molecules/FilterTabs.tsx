@@ -11,7 +11,11 @@ export function FilterTabs() {
   const { state, dispatch } = useTasks();
 
   return (
-    <div className="flex gap-1 p-1 bg-warmGray-100 dark:bg-warmGray-800 rounded-input" role="tablist" aria-label="タスクフィルタ">
+    <div
+      className="flex gap-1 p-1.5 bg-warm-bg-alt dark:bg-warm-bg-alt-dark rounded-pill"
+      role="tablist"
+      aria-label="タスクフィルタ"
+    >
       {filters.map((filter) => {
         const isActive = state.filter === filter;
         return (
@@ -23,23 +27,23 @@ export function FilterTabs() {
             aria-controls="task-list"
             onClick={() => dispatch({ type: 'SET_FILTER', payload: { filter } })}
             className={`
-              relative flex-1 px-3 py-2 text-tab rounded-[6px]
+              relative flex-1 px-3 py-2 text-tab rounded-full
               transition-colors duration-150
-              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/20
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/25
               ${isActive
-                ? 'text-warmGray-900 dark:text-warmGray-50'
-                : 'text-warmGray-500 dark:text-warmGray-400 hover:text-warmGray-700 dark:hover:text-warmGray-300'
+                ? 'text-warm-text-primary dark:text-warm-text-primary-dark'
+                : 'text-warm-text-secondary dark:text-warm-text-secondary-dark hover:text-warm-text-primary dark:hover:text-warm-text-primary-dark'
               }
             `}
           >
             {isActive && (
               <motion.div
                 layoutId="activeFilter"
-                className="absolute inset-0 bg-white dark:bg-warmGray-700 rounded-[6px] shadow-sm"
+                className="absolute inset-0 bg-warm-surface dark:bg-warm-surface-dark rounded-full shadow-card dark:shadow-card-dark"
                 transition={{ type: 'spring', stiffness: 400, damping: 30 }}
               />
             )}
-            <span className="relative z-10">{FILTER_LABELS[filter]}</span>
+            <span className="relative z-10 font-body">{FILTER_LABELS[filter]}</span>
           </button>
         );
       })}
